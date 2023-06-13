@@ -1,0 +1,17 @@
+<%= content_for(:breadcrumbs) do %>
+  <%= tag.div class: "flex #{items.present? ? 'justify-between' : 'justify-end'}" do %>
+    <%= tag.div class: container_classes do %>
+      <%= link_to '/' do %>
+        <%= helpers.fa_icon(:home, class: 'text-gray-400 mr-2') %>
+      <% end %>
+      <%= tag.div helpers.fa_icon('chevron-right'), class: divider_classes %>
+
+      <% items.each_with_index do |item, index| %>
+        <%= crumb(OpenStruct.new item) %>
+        <%= tag.div helpers.fa_icon('chevron-right'), class: divider_classes if index + 1 != items.count %>
+      <% end %>
+    <% end if items.present? %>
+
+    <%= render(System::TextComponent.new(body: proc { tag.span('We ') + helpers.fa_icon('heart') + tag.span(" #{account_name}")}, tag: :h3)) if account_name %>
+  <% end %>
+<% end %>

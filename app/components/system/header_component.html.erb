@@ -1,0 +1,14 @@
+<%= tag.div class: container_classes do %>
+  <%= tag.div class: header_container_classes do %>
+    <%= tag.div class: 'flex items-center' do %>
+      <%= tag.h1 title&.dig(:label), class: title_classes %>
+      <%= tag.div render(System::BadgeComponent.new(body: title.dig(:badge, :label), color: title.dig(:badge, :variant ))), class: 'pl-2' if title[:badge].present? %>
+    <% end %>
+    <%= tag.div do %>
+      <% actions.select{|a| a[:hidden] != true }.each do |action| %>
+        <%= tag.div render(System::ButtonComponent.new(target: action&.dig(:target), data: action&.dig(:data), label: action&.dig(:label), path: action&.dig(:path), method: action&.dig(:method), variant: action.fetch(:variant, :primary))), class: 'mr-1 inline-block' %>
+      <% end %>
+    <% end %>
+  <% end %>
+  <%= tag.div content, class: content_classes if content %>
+<% end %>

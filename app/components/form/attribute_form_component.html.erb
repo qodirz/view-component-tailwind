@@ -1,0 +1,15 @@
+<%= tag.div class: container_classes do %>
+  <% items.each do |item| %>
+    <%= tag.div class: wrapper_classes_for(item) do %>
+      <% if item[:fields_for].present? %>
+      <% form.simple_fields_for item[:fields_for] do |field_for| %>
+          <% item[:items].each do |field| %>
+            <%= input(field_for, field) %>
+          <% end %>
+        <% end %>
+      <% else %>
+        <%= input(form, item) %>
+      <% end %>
+    <% end unless item[:as] == :hidden || item[:hidden] %>
+  <% end %>
+<% end %>

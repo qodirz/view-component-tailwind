@@ -1,0 +1,5 @@
+<%= tag.div class: 'flex gap-6 pt-2 overflow-x-scroll border-b' do %>
+  <% visible_items.each_with_index do |item, i| %>
+    <%= tab OpenStruct.new(item) %>
+  <% end %>
+<% end %>

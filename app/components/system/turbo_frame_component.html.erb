@@ -1,0 +1,4 @@
+<%= content_tag 'turbo-frame', id: id, src: src, lazy: lazy do %>
+  <%= render System::LoadingComponent.new(variant: variant) %>
+<% end %>
+

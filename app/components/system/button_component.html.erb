@@ -1,0 +1,9 @@
+<%= container do %>
+  <%= tag.div class: body_classes do %>
+    <%= tag.div do %>
+      <%= tag.div label.html_safe, class: 'font-semibold' if label %>
+      <%= content.html_safe if content %>
+    <% end %>
+    <%= chevron_tag if variant == :chevron %>
+  <% end %>
+<% end %>

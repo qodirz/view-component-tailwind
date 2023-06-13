@@ -1,0 +1,12 @@
+<%= tag.span data: { controller: 'tooltip', 'tooltip-position-value': position } do %>
+  <%= tag.span id: 'tooltip-contents', data: {
+    'tooltip-target': 'contents',
+    action: "mouseenter->tooltip#show mouseleave->tooltip#hide"
+    } do %>
+    <%= body %>
+  <% end %>
+  <%= tag.div id: 'tooltip', class: "#{color_classes} whitespace-nowrap", 'data-tooltip-target': 'tooltip' do %>
+    <%= text %>
+    <%= tag.div id: 'arrow', 'data-popper-arrow': '' %>
+  <% end %>
+<% end %> 

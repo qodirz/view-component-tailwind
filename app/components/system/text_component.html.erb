@@ -1,0 +1,4 @@
+<%= container_tag do %>
+  <%= body.respond_to?(:call) ? body.call : body %>
+  <%= content %>
+<% end %>
