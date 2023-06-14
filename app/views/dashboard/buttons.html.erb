@@ -1,0 +1,32 @@
+<%= turbo_frame_tag :components do %>
+  <%= render 'dashboard/sidebar' %>
+  <div class="flex flex-wrap items-center mb-3.5 -m-2">
+    <div class="w-auto p-2">
+      <p class="text-neutral-500 font-medium">Button Component</p>
+    </div>
+  </div>
+  <%= tag.pre class: 'mb-8' do %>
+    render(System::ButtonComponent.new(label: 'Primary', path: "#", variant: :primary))
+  <% end %>
+  <%= tag.div class: 'mb-3' do %>
+    <%= render(System::ButtonComponent.new(label: 'Primary', path: root_path)) %>
+  <% end %>
+  <%= tag.div class: 'mb-3' do %>
+    <%= render(System::ButtonComponent.new(label: 'Secondary', path: root_path, variant: :secondary)) %>
+  <% end %>
+  <%= tag.div class: 'mb-3' do %>
+    <%= render(System::ButtonComponent.new(label: 'Success', path: root_path, variant: :success)) %>
+  <% end %>
+  <%= tag.div class: 'mb-3' do %>
+    <%= render(System::ButtonComponent.new(label: 'Danger', path: root_path, variant: :danger)) %>
+  <% end %>
+  <%= tag.div class: 'mb-3' do %>
+    <%= render(System::ButtonComponent.new(label: 'White', path: root_path, variant: :white)) %>
+  <% end %>
+  <%= tag.div class: 'mb-3' do %>
+    <%= render(System::ButtonComponent.new(label: 'Chevron', path: root_path, variant: :chevron)) %>
+  <% end %>
+  <%= tag.div class: 'mb-3' do %>
+    <%= render(System::ButtonComponent.new(label: 'Transparent', path: root_path, variant: :transparent)) %>
+  <% end %>
+<% end %>

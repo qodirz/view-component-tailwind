@@ -13,7 +13,7 @@ class System::AvatarComponent < ApplicationComponent
   end
 
   def base_classes
-    'w-full bg-slate-300 rounded-full border border-2 bg-cover'
+    'bg-slate-300 rounded-full border border-2 bg-cover'
   end
 
   def size_classes

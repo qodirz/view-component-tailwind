@@ -1,0 +1,20 @@
+<%= turbo_frame_tag :components do %>
+  <%= render 'dashboard/sidebar' %>
+  <div class="flex flex-wrap items-center mb-3.5 -m-2">
+    <div class="w-auto p-2">
+      <p class="text-neutral-500 font-medium">Button Component</p>
+    </div>
+  </div>
+  <%= tag.pre class: 'mb-8' do %>
+    System::AlertComponent.new(body: 'This is a notice', variant: :notice)
+  <% end %>
+  <%= tag.div class: 'mb-3' do %>
+    <%= render(System::AlertComponent.new(body: 'This is a notice', variant: :notice)) %>
+  <% end %>
+  <%= tag.div class: 'mb-3' do %>
+    <%= render(System::AlertComponent.new(body: 'This is an alert', variant: :alert)) %>
+  <% end %>
+  <%= tag.div class: 'mb-3' do %>
+    <%= render(System::AlertComponent.new(body: 'This is an error', variant: :error)) %>
+  <% end %>
+<% end %>

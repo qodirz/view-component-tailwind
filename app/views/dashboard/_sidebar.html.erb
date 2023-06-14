@@ -1,0 +1,19 @@
+<div class="navbar-menu relative z-50 hidden xl:flex xl:flex-col">
+  <div class="navbar-backdrop fixed xl:hidden inset-0 bg-gray-800 opacity-10"></div>
+  <div class="fixed inset-0 max-w-xss bg-light border-r">
+    <div class="flex-1 flex flex-col justify-between py-8 overflow-x-hidden overflow-y-auto">
+      <div class="flex flex-col flex-wrap px-7 mb-8 -m-2.5">
+        <div class="w-auto p-2.5">
+          <p class="hover:text-neutral-700 font-medium">View Component with Tailwind</p>
+        </div>
+        <div class="w-auto p-2.5">
+          <p class="text-xs text-neutral-400 font-medium uppercase mb-4 mt-4">Components</p>
+          <%= link_to 'Buttons', buttons_dashboard_index_path, class: 'flex flex-wrap items-center mb-3.5 hover:text-neutral-700 font-medium' %>
+          <%= link_to 'Alerts', alerts_dashboard_index_path, class: 'flex flex-wrap items-center mb-3.5 hover:text-neutral-700 font-medium' %>
+          <%= link_to 'Attributes', attributes_dashboard_index_path, class: 'flex flex-wrap items-center mb-3.5 hover:text-neutral-700 font-medium' %>
+          <%= link_to 'Avatar', avatar_dashboard_index_path, class: 'flex flex-wrap items-center mb-3.5 hover:text-neutral-700 font-medium' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<%= turbo_frame_tag :components do %>
+  <%= render 'dashboard/sidebar' %>
+  <div class="flex flex-wrap items-center mb-3.5 -m-2">
+    <div class="w-auto p-2">
+      <p class="text-neutral-500 font-medium">Avatar Component</p>
+    </div>
+  </div>
+  <%= tag.pre class: 'mb-8' do %>
+    render(System::AvatarComponent.new(url: sample_image_url, size: :sm))
+  <% end %>
+  <%= tag.div class: 'mb-3' do %>
+    <%= render(System::AvatarComponent.new(url: @image_url, size: :sm)) %>
+  <% end %>
+  <%= tag.div class: 'mb-3' do %>
+    <%= render(System::AvatarComponent.new(url: @image_url, size: :md)) %>
+  <% end %>
+  <%= tag.div class: 'mb-3' do %>
+    <%= render(System::AvatarComponent.new(url: @image_url, size: :lg)) %>
+  <% end %>
+<% end %>
